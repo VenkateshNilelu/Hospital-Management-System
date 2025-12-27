@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Dashboard | City Hospital</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/doctor-dashboard.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center">
+            <img src="assets/img/logo.png" height="36" class="me-2">
+            <strong>City Hospital</strong>
+        </a>
+
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a href="login.html" class="btn btn-outline-primary">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ================= DASHBOARD ================= -->
+<section class="dashboard">
+    <div class="container">
+
+        <!-- Header -->
+        <div class="mb-4">
+            <h3 class="fw-bold">Welcome, Doctor 👨‍⚕️</h3>
+            <p class="text-muted">Here is your daily overview</p>
+        </div>
+
+        <!-- STATS -->
+        <div class="row g-4 mb-4">
+
+            <div class="col-md-3">
+                <div class="glass stat-card">
+                    <h6>Today’s Appointments</h6>
+                    <h2>6</h2>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="glass stat-card">
+                    <h6>Total Patients</h6>
+                    <h2>128</h2>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="glass stat-card">
+                    <h6>Pending Reports</h6>
+                    <h2>4</h2>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="glass stat-card">
+                   <h6>Status</h6>
+<select class="form-select text-center fw-bold" id="doctorStatus" onchange="changeStatus()">
+    <option value="available" selected>Available</option>
+    <option value="busy">Busy</option>
+    <option value="offline">Offline</option>
+</select>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="row g-4">
+
+            <!-- Appointment List -->
+            <div class="col-md-8">
+                <div class="glass p-4">
+                    <h5 class="mb-3">Today’s Appointments</h5>
+
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr class="text-muted">
+                                <th>Patient</th>
+                                <th>Time</th>
+                                <th>Issue</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    <tr>
+        <td>
+            Rahul Sharma <br>
+            <small class="text-muted">Age: 45 | M | O+</small>
+        </td>
+        <td>10:00 AM</td>
+        <td>Chest Pain</td>
+        <td>
+            <button class="btn btn-sm btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#patientModal">
+                View
+            </button>
+            <button class="btn btn-sm btn-success ms-1">Done</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Anita Verma <br>
+            <small class="text-muted">Age: 32 | F | A+</small>
+        </td>
+        <td>11:30 AM</td>
+        <td>Headache</td>
+        <td>
+            <button class="btn btn-sm btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#patientModal">
+                View
+            </button>
+            <button class="btn btn-sm btn-warning ms-1">Reschedule</button>
+        </td>
+    </tr>
+</tbody>
+
+                    </table>
+                </div>
+            </div>
+
+            <!-- Doctor Profile -->
+            <div class="col-md-4">
+                <div class="glass p-4 text-center">
+                    <img src="assets/img/doctors/doctor-1.png" class="profile-img mb-3">
+                    <h6>Dr. John Smith</h6>
+                    <small class="text-muted">Cardiologist</small>
+
+                    <hr>
+
+                    <p><strong>Experience:</strong> 12 years</p>
+                    <p><strong>Availability:</strong> 10 AM – 5 PM</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- ================= PATIENT MODAL ================= -->
+<div class="modal fade" id="patientModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content glass p-3">
+
+            <div class="modal-header border-0">
+                <h5 class="modal-title">Patient Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <p><strong>Name:</strong> Rahul Sharma</p>
+                <p><strong>Age:</strong> 45</p>
+                <p><strong>Gender:</strong> Male</p>
+                <p><strong>Blood Group:</strong> O+</p>
+
+                <hr>
+
+                <p><strong>Medical History:</strong></p>
+                <ul>
+                    <li>Hypertension</li>
+                    <li>High Cholesterol</li>
+                </ul>
+
+                <p><strong>Current Complaint:</strong> Chest pain since morning</p>
+            </div>
+
+            <div class="modal-footer border-0">
+                <button class="btn btn-secondary btn-sm" data-bs-dismiss="modal">
+                    Close
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+function changeStatus() {
+    const status = document.getElementById("doctorStatus");
+    
+    status.classList.remove("text-success", "text-warning", "text-danger");
+
+    if (status.value === "available") {
+        status.classList.add("text-success");
+    } 
+    else if (status.value === "busy") {
+        status.classList.add("text-warning");
+    } 
+    else {
+        status.classList.add("text-danger");
+    }
+}
+</script>
+<!-- ================= STATUS TOAST ================= -->
+<div class="toast-container position-fixed top-0 end-0 p-3">
+    <div id="statusToast" class="toast align-items-center border-0" role="alert">
+        <div class="d-flex">
+            <div class="toast-body fw-semibold" id="toastMsg">
+                Status updated
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto"
+                    data-bs-dismiss="toast"></button>
+        </div>
+    </div>
+</div>
+<script>
+function changeStatus() {
+    const status = document.getElementById("doctorStatus");
+    const toastEl = document.getElementById("statusToast");
+    const toastMsg = document.getElementById("toastMsg");
+
+    // Reset colors
+    toastEl.classList.remove("bg-success", "bg-warning", "bg-danger");
+    status.classList.remove("text-success", "text-warning", "text-danger");
+
+    if (status.value === "available") {
+        toastEl.classList.add("bg-success");
+        status.classList.add("text-success");
+        toastMsg.innerText = "🟢 Status updated to Available";
+    } 
+    else if (status.value === "busy") {
+        toastEl.classList.add("bg-warning");
+        status.classList.add("text-warning");
+        toastMsg.innerText = "🟡 Status updated to Busy";
+    } 
+    else {
+        toastEl.classList.add("bg-danger");
+        status.classList.add("text-danger");
+        toastMsg.innerText = "🔴 Status updated to Offline";
+    }
+
+    const toast = new bootstrap.Toast(toastEl);
+    toast.show();
+}
+</script>
+</body>
+</html>

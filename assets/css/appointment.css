@@ -1,0 +1,98 @@
+/* ================= GLOBAL ================= */
+body {
+    padding-top: 80px;
+    font-family: "Segoe UI", sans-serif;
+
+    /* Glossy medical background */
+    background: linear-gradient(
+        135deg,
+        #eaf3ff 0%,
+        #f8fbff 45%,
+        #eafaf4 100%
+    );
+
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Soft light reflections */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at top left, rgba(13,110,253,0.12), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(32,201,151,0.12), transparent 40%);
+    z-index: -1;
+}
+
+/* ================= APPOINTMENT ================= */
+.appointment {
+    padding: 50px 0;
+}
+
+/* ================= GLASS CARD ================= */
+.glass {
+    background: rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.45);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.18);
+
+    padding: 35px;
+}
+
+/* ================= HEADINGS ================= */
+.appointment h3 {
+    color: #1f2933;
+}
+
+.appointment p {
+    color: #6b7280;
+}
+
+/* ================= FORM ELEMENTS ================= */
+.form-label {
+    font-weight: 500;
+    color: #1f2933;
+}
+
+.form-control,
+.form-select,
+textarea {
+    background: rgba(255,255,255,0.85);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 14px;
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea:focus {
+    box-shadow: 0 0 0 3px rgba(13,110,253,0.25);
+    outline: none;
+}
+
+/* ================= BUTTON ================= */
+button.btn-primary {
+    background: linear-gradient(
+        135deg,
+        #0d6efd,
+        #0b5ed7
+    );
+    border: none;
+    padding: 12px;
+    font-weight: 600;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(13,110,253,0.35);
+}
+
+button.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px rgba(13,110,253,0.45);
+    transition: 0.3s ease;
+}

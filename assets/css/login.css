@@ -1,0 +1,62 @@
+/* ================= LOGIN PAGE ================= */
+.login-page {
+    position: relative;
+    min-height: 100vh;
+    background: url("../img/backgrounds/login-bg.png") no-repeat center / cover;
+}
+
+.login-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+.login-page .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ================= LOGIN CARD ================= */
+/* ================= GLASS LOGIN CARD ================= */
+.login-card {
+    background: rgba(255, 255, 255, 0.25); /* transparency */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 35px;
+    border-radius: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.25);
+
+    color: #1f2933;
+}
+
+
+.login-card h4 {
+    color: #0d6efd;
+}
+
+.login-card label {
+    font-weight: 500;
+}
+
+
+.login-card .form-control,
+.login-card .form-select {
+    background: rgba(255,255,255,0.85);
+    border: none;
+}
+
+
+.login-card .btn-primary {
+    background-color: #0d6efd;
+    border: none;
+}
+
+.login-card:hover {
+    transform: translateY(-4px);
+    transition: 0.3s ease;
+}
+

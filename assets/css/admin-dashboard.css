@@ -1,0 +1,56 @@
+/* ================= GLOBAL ================= */
+body {
+    padding-top: 80px;
+    font-family: "Segoe UI", sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #eef6ff 0%,
+        #f8fbff 45%,
+        #eef9f6 100%
+    );
+
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Soft glow */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at top left, rgba(13,110,253,0.12), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(32,201,151,0.12), transparent 40%);
+    z-index: -1;
+}
+
+/* ================= DASHBOARD ================= */
+.dashboard {
+    padding: 40px 0;
+}
+
+/* ================= GLASS ================= */
+.glass {
+    background: rgba(255,255,255,0.32);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.45);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* ================= STATS ================= */
+.stat-card {
+    padding: 20px;
+    text-align: center;
+}
+
+.stat-card h6 {
+    color: #6b7280;
+}
+
+.stat-card h2 {
+    font-weight: 700;
+    color: #0d6efd;
+}

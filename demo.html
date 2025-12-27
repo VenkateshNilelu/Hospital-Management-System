@@ -1,0 +1,44 @@
+<html>
+  <body>
+    <div id="demo"></div>
+    <div id="output1"></div>
+    <p id = "output2"> </p>
+    <script type="text/javascript">
+      const output = document.getElementById("demo");
+      let book = "economics";
+      if (book == "history") {
+        output.innerHTML = "<b>History Book</b>";
+      } else if (book == "maths") {
+        output.innerHTML = "<b>Maths Book</b>";
+      } else if (book == "economics") {
+        output.innerHTML = "<b>Economics Book</b>";
+      } else {
+        output.innerHTML = "<b>Unknown Book</b>";
+      }
+
+      let output1 = document.getElementById("output1");
+      var count = 0;
+      output1.innerHTML = "Starting Loop <br>";
+      while (count < 10) {
+        output1.innerHTML += "Current Count : " + count + "<br>";
+        count++;
+      }
+      output1.innerHTML += "Loop stopped!";
+
+        const output2 = document.getElementById("output2");
+        output2.innerHTML = "Starting Loop <br>";
+        let count1;
+        for (let count1 = 0; count1 < 10; count1++) {
+            output2.innerHTML = "Current Count : " + count1 + "<br/>";
+        }
+        output2.innerHTML += "Loop stopped!";
+
+
+
+
+    </script>
+
+    <p></p>
+  </body>
+  
+</html>
